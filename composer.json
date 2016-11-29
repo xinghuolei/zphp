@@ -1,22 +1,16 @@
 {
-	"name": "zphp/zphp",
+	"name": "xinghuolei/zphp",
 	"type": "framework",
     "description": "ZPHP is a light that is dedicated to gaming, social networking, web, mobile server-side frameworks. Providing high performance real-time communication solutions.",
     "keywords": ["framework", "server", "socket", "multi", "progress" ,"thread"],
-    "homepage": "https://github.com/shenzhe/zphp",
+    "homepage": "",
     "license": "MIT",
 	"authors": [
-		{
-			"name": "shenzhe",
-			"email": "shenzhe163@gmail.com"
-		},
-		{
-			"name": "cooper",
-			"email": "myxiaoao@gmail.com"
-		}
+
 	],
 	"require": {
-		"php": ">=5.3.7"
+		"php": ">=5.3.7",
+        "predis/predis":"*"
 	},
 	"autoload": {
         "psr-0": { "ZPHP\\": "" }

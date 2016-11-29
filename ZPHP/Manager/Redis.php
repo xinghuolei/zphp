@@ -23,15 +23,9 @@ class Redis
         if (isset($config['timeout'])) {
             $timeOut = $config['timeout'];
         }
-        $pconnect = !empty($config['pconnect']);
         if (empty(self::$instances[$name])) {
-            $redis = new \Redis();
-            if ($pconnect) {
-                $redis->pconnect($config['host'], $config['port'], $timeOut);
-            } else {
-                $redis->connect($config['host'], $config['port'], $timeOut);
-            }
-            $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_NONE);
+            $redis = new \Predis\Client();
+            $redis->connect($config['host'], $config['port'], $timeOut);
             if (!empty($config['auth'])) {
                 $redis->auth($config['auth']);
             }
